@@ -1,0 +1,64 @@
+
+body{
+  text-align: center;
+  background-color: black;
+  color: rgba(250,250,250,0.6);
+  font-size: 2vw;
+}
+#background-video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+.game-container{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+.game-container .game-content{
+  position: relative;
+  z-index: 4;
+}
+.zombie {
+  height: 20vw;
+  cursor: crosshair;
+  position: absolute;
+  z-index: 5;
+  top: 36.15vw;
+}
+.animated-from-left {
+  animation-name: slide-in-from-left;
+  animation-duration: 2s;
+  left: 30vw;
+}
+.animated-from-right {
+  animation-name: slide-in-from-right;
+  animation-duration: 2s;
+  right: 30vw;
+}
+.upside-down {
+  top: 0;
+}
+
+@keyframes grow {
+  from { width: 10%; left: 38%; top: 0%;}
+  to { width: 50%; left: 30%; top: 10%;}
+}
+@keyframes slide-in-from-left {
+  from{ left: 0vw; opacity: 0; }
+  to{ left: 30vw; opacity: 1; }
+}
+@keyframes slide-in-from-right {
+  from{ right: 0vw; opacity: 0; }
+  to{ right: 30vw; opacity: 1; }
+}
+
+
+@keyframes pan-around {
+  0% { background-position: 0000em; }
+  50% { background-position: 1000em; }
+  100% { background-position: 2000em; }
+}
