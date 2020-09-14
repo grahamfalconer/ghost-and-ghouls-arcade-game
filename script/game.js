@@ -41,7 +41,11 @@ checkHP = () => {
     clearInterval(checkHPInterval)
     document.getElementById('zombie').remove()
     screamNoise.play()
-    playerScore.setAttribute('style', 'font-size: 20vw; background-color: rgba(0,0,0,0.6);')
+    newTag = document.createElement('a')
+    newTag.setAttribute('href', 'welcom.html')
+    newTag.innerHTML = " -> Play Again"
+    playerScore.append(newTag)
+    playerScore.setAttribute('style', 'font-size: 5vw; background-color: rgba(0,0,0,0.6);')
   }
 }
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="game.css">
+  <title>Ghosts and Ghouls</title>
+</head>
+<body>
+
+  <audio id="shotgun-noise">
+    <source src="./assets/audio/shotnoise.wav" type="audio/wav">
+  Your browser does not support the audio element.
+  </audio>
+  <audio id="zombie-noise">
+    <source src="./assets/audio/zombienoise.wav" type="audio/wav">
+  Your browser does not support the audio element.
+  </audio>
+  <audio id="shotgun-reload">
+    <source src="./assets/audio/reloadnoise.wav" type="audio/wav">
+  Your browser does not support the audio element.
+  </audio>
+  <audio id="empty-clip">
+    <source src="./assets/audio/emptyclip.flac" type="audio/flac">
+  Your browser does not support the audio element.
+  </audio>
+  <audio id="horror-scream">
+    <source src="./assets/audio/scream.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+  </audio>
+
+  <div class="game-container">
+    <video src="assets/videos/Scary+Dark+Background+Music+Ambient.mp4" id="background-video" autoplay loop playsinline webkit-playsinline preload="auto">  </video>
+    <div class="game-content">
+      <h1> Ghosts and Ghouls </h1>
+      <p id="player-status"></p>
+      <p id="player-hp">HP: 100</p>
+      <p id="player-score">Score: 0</p>
+    </div>
+  </div>
+
+</body>
+<script src="script/zombie.js"></script>
+<script src="script/player.js"></script>
+<script src="script/game.js"> </script>
+</html>
