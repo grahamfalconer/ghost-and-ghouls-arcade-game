@@ -4,6 +4,11 @@ body{
   background-color: black;
   color: rgba(250,250,250,0.6);
   font-size: 2vw;
+  font-family: eroded;
+}
+a{
+  display: block;
+  padding-top: 5vw;
 }
 #background-video{
   position: absolute;
@@ -61,4 +66,9 @@ body{
   0% { background-position: 0000em; }
   50% { background-position: 1000em; }
   100% { background-position: 2000em; }
+}
+
+@font-face {
+  src: url(assets/fonts/chronicle.ttf);
+  font-family: 'eroded';
 }

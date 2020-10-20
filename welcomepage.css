@@ -1,0 +1,20 @@
+body{
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: eroded;
+}
+p{
+  font-size: 2.5vw;
+}
+a{
+  font-size: 5vw;
+}
+h2{
+  font-size: 7vw;
+}
+
+@font-face {
+  src: url(assets/fonts/chronicle.ttf);
+  font-family: 'eroded';
+}

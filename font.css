@@ -1,0 +1,7 @@
+@font-face {
+  src: url(assets/fonts/TheyPerished.ttf);
+  font-family: 'eroded';
+}
+body{
+  font-family: eroded;
+}

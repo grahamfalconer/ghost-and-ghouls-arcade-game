@@ -1,20 +1,24 @@
 var zombie = new Zombie;
 var player = new Player;
-var playerScore = document.getElementById('player-score')
-var backgroundVideo = document.getElementById('background-video')
-var screamNoise = document.getElementById('horror-scream')
-attackInterval = setInterval(() => {zombie.doDamageToPlayer()}, 100)
+var playerScore = document.getElementById('player-score');
+var backgroundVideo = document.getElementById('background-video');
+var screamNoise = document.getElementById('horror-scream');
 
-document.addEventListener('keyup', function(event){
-  event.key == 'r' ? player.reload() : console.log(event)
-})
-document.addEventListener('click', function(event){
-  player.shoot()
-})
-document.addEventListener('on', function(event){
-  event.key == 'r' ? player.reload() : console.log(event)
-})
-
+startGame = () => {
+  document.addEventListener('keyup', function(event){
+    event.key == 'r' ? player.reload() : console.log(event)
+  })
+  document.addEventListener('click', function(event){
+    player.shoot()
+  })
+  document.addEventListener('on', function(event){
+    event.key == 'r' ? player.reload() : console.log(event)
+  })
+  zombieSpawner = new ZombieSpawner()
+  zombieSpawner.spawnZombie();
+  attackInterval = setInterval(() => {zombie.doDamageToPlayer()}, 100)
+  checkHPInterval = setInterval(() => {checkHP()}, 10);
+}
 
 killZombie = function(){
   if(player.state.ammunition > 0){
@@ -31,8 +35,6 @@ killZombie = function(){
   }
 }
 
-checkHPInterval = setInterval(() => {checkHP()}, 10);
-
 checkHP = () => {
   if(player.state.hp < 1){
     backgroundVideo.currentTime = 32;
@@ -42,10 +44,10 @@ checkHP = () => {
     document.getElementById('zombie').remove()
     screamNoise.play()
     newTag = document.createElement('a')
-    newTag.setAttribute('href', 'welcom.html')
-    newTag.innerHTML = " -> Play Again"
+    newTag.setAttribute('href', 'game.html')
+    newTag.innerHTML = "Play Again"
     playerScore.append(newTag)
-    playerScore.setAttribute('style', 'font-size: 5vw; background-color: rgba(0,0,0,0.6);')
+    playerScore.setAttribute('style', 'font-size: 5vw;')
   }
 }
 
@@ -56,8 +58,6 @@ class ZombieSpawner{
   }
 }
 
-zombieSpawner = new ZombieSpawner()
-zombieSpawner.spawnZombie();
-
-
-// window.onload 
+window.onload = setTimeout(() => {
+  startGame();
+}, 1500);
